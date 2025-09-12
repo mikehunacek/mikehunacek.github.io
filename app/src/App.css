@@ -1,42 +1,228 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+a {
+    transition: color 0.3s ease; /* Transition for interactive elements */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+a:hover {
+    color: #007bff;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Adjusted for better page fill */
+    background: linear-gradient(135deg, #4a90e2, #007bff);
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+    background-attachment: fixed; /* Parallax effect */
+    border-bottom: 5px solid #ff6f61; /* Engaging design element */
+    max-width: 800px; /* Match other sections */
+    padding: 0 2rem; /* Add padding for spacing */
+    margin: 0 auto; /* Center the hero section horizontally */
+}
+
+.hero-content {
+    max-width: 500px; /* Adjusted for balance */
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1); /* Subtle overlay */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Modern gradient */
+    border: 2px solid transparent;
+    border-radius: 30px; /* Softer, pill-shaped button */
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    box-shadow: 0 0 20px rgba(37, 117, 252, 0.8);
+    border-color: #2575fc;
+}
+
+.cta-button:hover {
+  background: #ff4a3d;
+}
+
+section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  color: #4a90e2;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+}
+
+section ul li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skills p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills p span {
+  background: #4a90e2;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.professional-skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.professional-skills ul li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professional-skills ul li span {
+  flex: 1;
+  font-weight: bold;
+}
+
+.progress-bar {
+  flex: 3;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4a90e2, #007bff);
+    border-radius: 5px 0 0 5px;
+    animation: progressAnimation 2s ease-in-out;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: white;
+    font-size: 0.9rem;
+    border-top: 4px solid;
+    border-image: linear-gradient(90deg, #4a90e2, #007bff) 1;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero {
+    height: auto; /* Adjust height for smaller screens */
+    padding: 2rem 1rem; /* Add padding for spacing */
+    flex-direction: column; /* Stack content vertically */
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .hero-content {
+    max-width: 100%; /* Ensure content fills available space */
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .cta-button {
+    width: 100%; /* Full-width button for smaller screens */
+    text-align: center;
+  }
 
-.muted-text {
-  color: #888;
+  section {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
 }
